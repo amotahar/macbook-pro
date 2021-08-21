@@ -4,15 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mack Book Pro </title>
+    <title>Mack book purchase</title>
+    <!-- tailwind css cdn link -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-
 </head>
 <body>
-    
-    <header class="grid-cols-2">
-         <img src="images/mac.png" alt="">
-    </header>
+
+    <section class="container mx-auto flex justify-center border-b-2 py-4">
+        <div class="w-1/2">
+            <img src="images/mac.png" alt="" class="w-3/4 mx-auto">
+        </div>
+        <div class="w-1/2">
+            <h1 class="text-5xl font-semibold mb-6">Customize your Blue 24-inch iMac with Apple M1 chip</h1>
+            <p class="mb-8">Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-core GPU, and 16-core Neural Engine 8GB unified memory 256GB SSD storage Two Thunderbolt / USB 4 ports Magic Mouse Magic Keyboard -US English.</p>
+            <!-- option selecting button section -->
+            <div class="my-8">
+                <h4 class="font-semibold">Memory</h4>
+                <button id="memory-8" class="border rounded px-2 py-1 shadow border-gray-400">8GB unified memory</button>
+                <button id="memory-16" class="border rounded px-2 py-1 shadow border-gray-400">16GB unified memory</button>
+            </div>
+            <div class="my-8">
+                <h4 class="font-semibold">Storage</h4>
+                <button id="ssd-256" class="border rounded px-2 py-1 shadow border-gray-400">256GB SSD storage</button>
+                <button id="ssd-512" class="border rounded px-2 py-1 shadow border-gray-400">512GB SSD storage</button>
+                <button id="ssd-1tb" class="border rounded px-2 py-1 shadow border-gray-400">1TB SSD storage</button>
+            </div>
+            <div class="my-8">
+                <h4 class="font-semibold">Choose your delivery option</h4>
+                <button id="delivery-free" class="border rounded px-2 py-1 shadow border-gray-400">Friday, Aug 28 FREE Prime delivery</button>
+                <button id="delivery-paid" class="border rounded px-2 py-1 shadow border-gray-400">Friday, Aug 21 paid delivery at $20</button>
+                
+            </div>
+            <!-- price calculating section -->
+            <div class="my-8">
+                <table>
+                    <tr class="border-b-2">
+                        <td class="pr-4 font-semibold">Best Price</td>
+                        <td class="pr-4 font-semibold">$ <span id="base-price"></span></td>
+                    </tr>
+                    <tr class="border-b-2">
+                        <td class="pr-4 font-semibold">Extra memory cost</td>
+                        <td class="pr-4 font-semibold">$<span id="memory-cost"></span></td>
+                    </tr>
+                    <tr class="border-b-2">
+                        <td class="pr-4 font-semibold">Extra Storage cost</td>
+                        <td class="pr-4 font-semibold">$<span id="storage-cost"></span></td>
+                    </tr>
+                    <tr class="border-b-2 border-black">
+                        <td class="pr-4 font-semibold">Delivery charge</td>
+                        <td class="pr-4 font-semibold">$<span id="delivery-charge"></span></td>
+                    </tr>
+                    <tfoot class="border-b-2">
+                        <td class="pr-4 font-semibold">Total Price</td>
+                        <td class="pr-4 font-semibold">$<span id="total"></span></td>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- promo section -->
+            <div>
+                <h4 class="pr-4 font-semibold">Add Promo code</h4>
+                <input id="promo-input" class="border-gray-300 border py-1 pl-2 rounded" type="text" placeholder="Apply Promo Code">
+                <button id="promo-submit" class="bg-red-600 px-4 py-1.5 text-white -ml-2 rounded">Apply</button><br>
+                <p id="promo-message" class="p-2 inline-block"></p>
+            </div>
+        </div>
+    </section>
+     
+    <h2 class="text-center font-semibold text-4xl my-4">Total: $<span id="total-after-promo">1299</span></h2>
 
     <script src="js/mac.js"></script>
 </body>
